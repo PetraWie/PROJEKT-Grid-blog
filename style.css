@@ -66,37 +66,106 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+h1 {
+	font-size: 90px;
+	color: var(--zelena);
+}
+
+h2 {
+	font-size: 65px;
+	color: var(--zelena);
+}
+
+
 .blog {
 	display: grid;
-	gap: 40px;
+	gap: 0 40px;
 	grid-template-columns: 1fr 4fr 2fr;
 	justify-items: center;
 }
 
 .meta {
 	grid-column: 2;
-	grid-row: 2;
+	align-self: end;
+	color: var(--seda);
+	margin-bottom: 0;
+
 }
 
-h1 {
-	grid-column: 2;
-	grid-row: 1;
+h1, h2, p, header, footer {
+	grid-column: 2/3;
+
+}
+
+img {
+	width:100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+figure {
+	width: 100%; /* aby se to roztáhlo do celé šířky musela jsem nastavit hodnoty width a margin i zde */
+	margin:0;
 }
 
 .vetsina {
 	grid-column: 2;
-	grid-row: 3;
 }
+
+.tip {
+	background-color: var(--svetla);
+	padding: 10px 20px;
+	margin-bottom: 40px;
+	margin-top: 20px;
+	justify-items: center;
+	align-items: center;
+}
+
+.tip p {
+	margin: 0;
+
+}
+
+.tip a {
+	color: var(--oranzova);
+}
+
+.tip-vpravo {
+	border-left: solid 3px var(--zluta);
+}
+
 .tip-vlevo {
 	grid-column: 1 / 2;
+	border-right: solid 3px var(--zluta);
 }
 
 figure {
-	width:100%;
-	display: block;
 	grid-column: 1 / 4;
 }
 
+figcaption {
+	color: var(--seda)
+}
+
 blockquote {
+	font-size: 35px;
+	color: var(--seda);
 	grid-column: 1 / 4;
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100px;
+	background-image: linear-gradient(to right, var(--limetka), var(--zluta));
+	/* background-color: var(--zelena); správný zápis dle zadání */
+	/* position: absolute; */
+	margin: 15px auto;
+}
+
+footer p, a {
+color: var(--seda);
 }
